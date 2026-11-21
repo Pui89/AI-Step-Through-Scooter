@@ -1,4 +1,5 @@
 """Deterministic synthetic-scenario risk baseline; never use for real riding."""
+import math
 from typing import Any
 
 VALID_SURFACES = {"dry", "wet", "gravel", "mud", "oil", "ice", "unknown"}
@@ -7,17 +8,26 @@ MAX_OBSERVATION_AGE_MS = 1000
 
 def classify_scenario(observation: dict[str, Any]) -> dict[str, Any]:
     """Classify synthetic input conservatively. No hardware or control output."""
+    if not isinstance(observation, dict):
+        return _result("UNKNOWN_DEGRADED", "Observation must be an object", ["observation"])
     required = {"surface", "traction_estimate", "visibility_m", "obstacle_distance_m", "observation_age_ms"}
     missing = sorted(required - observation.keys())
     if missing:
         return _result("UNKNOWN_DEGRADED", "Required synthetic fields are missing", missing)
     surface = observation["surface"]
     values = {k: observation[k] for k in ("traction_estimate", "visibility_m", "obstacle_distance_m", "observation_age_ms")}
-    if surface not in VALID_SURFACES:
+    if not isinstance(surface, str) or surface not in VALID_SURFACES:
         return _result("UNKNOWN_DEGRADED", "Surface label is unsupported", ["surface"])
     for name, value in values.items():
         if isinstance(value, bool) or not isinstance(value, (int, float)):
             return _result("UNKNOWN_DEGRADED", f"{name} is not numeric", [name])
+    for name, value in values.items():
+        try:
+            finite = math.isfinite(value)
+        except (OverflowError, TypeError, ValueError):
+            finite = False
+        if not finite:
+            return _result("UNKNOWN_DEGRADED", f"{name} is not finite", [name])
     traction, visibility, obstacle, age = (values[k] for k in ("traction_estimate", "visibility_m", "obstacle_distance_m", "observation_age_ms"))
     if not 0 <= traction <= 1 or visibility < 0 or obstacle < 0 or age < 0:
         return _result("UNKNOWN_DEGRADED", "Value outside accepted synthetic test range", ["range_validation"])

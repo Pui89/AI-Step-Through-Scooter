@@ -207,3 +207,17 @@ This repository follows the portfolio-wide [PUI89 Future-Ready Technology Policy
 | Vehicle-data integration | Prefer documented read-only interfaces; maintain provenance and update integrity; do not write safety-critical control commands. |
 
 **First gate:** rider-safety hazard analysis and strict separation from throttle, steering and braking. **Status:** Planned roadmap only.
+
+
+## Long-Term Technology Evolution & Anti-Obsolescence Strategy (2027–2030+)
+
+This roadmap extends the P1–P4 sequence beyond the 2026 trend baseline. Horizons are evaluation windows, not guaranteed capabilities or fixed adoption dates. Adoption depends on verified rider value, provenance/licensing, target-hardware fit, safety, maintainability and reproducible evidence.
+
+| Horizon | Product evolution focus |
+|---|---|
+| 2027 | Define rider hazard taxonomy, warning priorities, read-only vehicle interfaces, low-power compute limits and strict separation from vehicle controls. |
+| 2028 | Evaluate road perception and sensor fusion in representative conditions; measure warning latency, false alarms, missed hazards, energy and thermal limits. |
+| 2029 | Explore context-aware hazard anticipation, road-condition intelligence and predictive maintenance using traceable data and human-interpretable warnings. |
+| 2030+ | Support replaceable sensors, models and edge compute across scooter revisions while retaining offline warnings and no autonomous throttle/steering/braking. |
+
+**Continuous anti-obsolescence rule:** review technology signals monthly, architecture quarterly and the full roadmap annually; trigger an out-of-cycle review for unsupported critical dependencies, security issues or breached performance/resource limits. Every upgrade needs a verified baseline, migration/rollback path, compatibility/regression tests and a recorded decision. Do not adopt trends merely because they are new. **Status:** Planned only; future capabilities are not claimed as implemented or validated.

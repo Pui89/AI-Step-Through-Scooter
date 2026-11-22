@@ -190,3 +190,34 @@ For international engineering, factory and worker handoff, use the controlled PU
 - [PUI89 Global Manufacturing Handoff System v1.0](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_GLOBAL_MANUFACTURING_HANDOFF_SYSTEM_V1.0.md)
 
 **Production rule:** Build, buy, substitute, inspect or release only against the exact approved product configuration, revision, drawing, BOM and work instruction. Missing or conflicting values are **STOP — DO NOT GUESS**; raise a Technical Query (TQ). The shared blank manufacturing templates are being reviewed in [PUI89 website PR #639](https://github.com/Pui89/Pui89.github.io/pull/639) and are not yet production authority.
+
+## Future-Ready Technology Policy
+
+This repository follows the portfolio-wide [PUI89 Future-Ready Technology Policy v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/architecture/PUI89_FUTURE_READY_TECHNOLOGY_POLICY_V1.0.md). It requires upgradeable interfaces, evidence-based technology selection, provenance/licence review, local-first resource discipline, compatibility testing, safe fallback and controlled release scope. Technology candidates are reviewed monthly and architecture decisions quarterly. This reference records policy adoption intent; it does **not** claim that model switching, hardware abstraction, sensor adapters, automated monitoring or product-level validation are already implemented.
+
+## Product-Specific Technology Upgrade Plan
+
+**Gartner 2026 alignment:** Physical AI, hybrid compute, Digital Provenance and AI Security. See the [canonical portfolio policy](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/architecture/PUI89_FUTURE_READY_TECHNOLOGY_POLICY_V1.0.md).
+
+| Upgrade area | Planned sequence (not yet a capability claim) |
+|---|---|
+| Road perception & hazard detection | Define rider-relevant hazards and operating conditions; benchmark low-power detection and warning quality with documented false-alarm/missed-event cases. |
+| Rider safety | Specify warning priorities, human response expectations and non-interference with vehicle controls; test alert comprehension and failure modes. |
+| Sensor fusion & edge AI | Add sensor fusion only when justified; measure latency, energy, heat and offline/degraded behaviour on target hardware. |
+| Vehicle-data integration | Prefer documented read-only interfaces; maintain provenance and update integrity; do not write safety-critical control commands. |
+
+**First gate:** rider-safety hazard analysis and strict separation from throttle, steering and braking. **Status:** Planned roadmap only.
+
+
+## Long-Term Technology Evolution & Anti-Obsolescence Strategy (2027–2030+)
+
+This roadmap extends the P1–P4 sequence beyond the 2026 trend baseline. Horizons are evaluation windows, not guaranteed capabilities or fixed adoption dates. Adoption depends on verified rider value, provenance/licensing, target-hardware fit, safety, maintainability and reproducible evidence.
+
+| Horizon | Product evolution focus |
+|---|---|
+| 2027 | Define rider hazard taxonomy, warning priorities, read-only vehicle interfaces, low-power compute limits and strict separation from vehicle controls. |
+| 2028 | Evaluate road perception and sensor fusion in representative conditions; measure warning latency, false alarms, missed hazards, energy and thermal limits. |
+| 2029 | Explore context-aware hazard anticipation, road-condition intelligence and predictive maintenance using traceable data and human-interpretable warnings. |
+| 2030+ | Support replaceable sensors, models and edge compute across scooter revisions while retaining offline warnings and no autonomous throttle/steering/braking. |
+
+**Continuous anti-obsolescence rule:** review technology signals monthly, architecture quarterly and the full roadmap annually; trigger an out-of-cycle review for unsupported critical dependencies, security issues or breached performance/resource limits. Every upgrade needs a verified baseline, migration/rollback path, compatibility/regression tests and a recorded decision. Do not adopt trends merely because they are new. **Status:** Planned only; future capabilities are not claimed as implemented or validated.

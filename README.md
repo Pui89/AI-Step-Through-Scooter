@@ -162,3 +162,19 @@ See the [PUI89 Vehicle AI Development Gap Audit v1.0](https://github.com/Pui89/P
 **Product-specific offline baseline:** Normal rider-operated controls and required vehicle safety functions must be independent of the app and internet. AI assistance may become unavailable with a clear local indication. Loss of connectivity must not cause unexpected throttle, steering, braking, ignition or motion activation. No remote throttle, steering, braking, ignition or unattended movement.
 
 These are development requirements, not claims of implemented, tested or validated capability.
+
+
+## Latest engineering progress — 22 November 2026
+
+**Maturity:** Specified — rider-first two-wheel step-through requirements are documented. **Evidence status:** PARTIAL. No functioning scooter, rider trial or road certification is established.
+
+**Recent verified repository progress:**
+- Merged offline-first controls, manuals and remote-companion requirements (PR #97).
+- Merged hardening that rejects malformed and non-finite synthetic risk inputs, with additional boundary-condition test cases (PR #98).
+- These software changes do not establish vehicle integration, road-scene accuracy, collision prevention or physical rider safety; test execution results must be recorded against the exact commit before claiming a pass.
+
+**Not established:** a physical scooter, validated braking/stability, road testing, water-crossing capability, rider-trial results or regulatory approval.
+
+**Next evidence gate:** record reproducible test execution for the risk-input boundary cases; complete rider use cases, vehicle architecture, sensor placement, hazard analysis and measurable acceptance criteria before any prototype build or road test.
+
+**Last reviewed:** 22 November 2026. See [offline-first/manual PR #97](https://github.com/Pui89/AI-Step-Through-Scooter/pull/97) and [risk-input hardening PR #98](https://github.com/Pui89/AI-Step-Through-Scooter/pull/98).

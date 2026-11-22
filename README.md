@@ -178,3 +178,7 @@ These are development requirements, not claims of implemented, tested or validat
 **Next evidence gate:** record reproducible test execution for the risk-input boundary cases; complete rider use cases, vehicle architecture, sensor placement, hazard analysis and measurable acceptance criteria before any prototype build or road test.
 
 **Last reviewed:** 22 November 2026. See [offline-first/manual PR #97](https://github.com/Pui89/AI-Step-Through-Scooter/pull/97) and [risk-input hardening PR #98](https://github.com/Pui89/AI-Step-Through-Scooter/pull/98).
+
+## Global manufacturing engineering
+
+The product-specific [PUI89 Global Manufacturing Design Brief v1.0](docs/PUI89_GLOBAL_MANUFACTURING_DESIGN_BRIEF_V1.0.md) defines the preliminary product envelope, candidate material families, component architecture, global human-factors requirements, extreme-environment design strategy, manufacturing transfer package, quality gates and unresolved specifications. It distinguishes proposed targets from tested or verified performance. Candidate materials and component types are not an approved BOM; exact grades, models, dimensions and tolerances remain open until engineering analysis and validation.

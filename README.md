@@ -194,3 +194,16 @@ For international engineering, factory and worker handoff, use the controlled PU
 ## Future-Ready Technology Policy
 
 This repository follows the portfolio-wide [PUI89 Future-Ready Technology Policy v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/architecture/PUI89_FUTURE_READY_TECHNOLOGY_POLICY_V1.0.md). It requires upgradeable interfaces, evidence-based technology selection, provenance/licence review, local-first resource discipline, compatibility testing, safe fallback and controlled release scope. Technology candidates are reviewed monthly and architecture decisions quarterly. This reference records policy adoption intent; it does **not** claim that model switching, hardware abstraction, sensor adapters, automated monitoring or product-level validation are already implemented.
+
+## Product-Specific Technology Upgrade Plan
+
+**Gartner 2026 alignment:** Physical AI, hybrid compute, Digital Provenance and AI Security. See the [canonical portfolio policy](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/architecture/PUI89_FUTURE_READY_TECHNOLOGY_POLICY_V1.0.md).
+
+| Upgrade area | Planned sequence (not yet a capability claim) |
+|---|---|
+| Road perception & hazard detection | Define rider-relevant hazards and operating conditions; benchmark low-power detection and warning quality with documented false-alarm/missed-event cases. |
+| Rider safety | Specify warning priorities, human response expectations and non-interference with vehicle controls; test alert comprehension and failure modes. |
+| Sensor fusion & edge AI | Add sensor fusion only when justified; measure latency, energy, heat and offline/degraded behaviour on target hardware. |
+| Vehicle-data integration | Prefer documented read-only interfaces; maintain provenance and update integrity; do not write safety-critical control commands. |
+
+**First gate:** rider-safety hazard analysis and strict separation from throttle, steering and braking. **Status:** Planned roadmap only.

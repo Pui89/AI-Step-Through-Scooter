@@ -1,5 +1,7 @@
 # PUI89 AI Step-Through Scooter — Inclusive Mobility Concept
 
+**ภาษาไทย:** [อ่าน README ภาษาไทย](README.th.md)
+
 ## Product and AI system update — 18 November 2026
 
 **Public product summary (EN):** PUI89 AI Step-Through Scooter is a practical two-wheel step-through mobility concept with rider-first AI awareness. The easy-mount floorboard and human-operated controls are central to the product direction.

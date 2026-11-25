@@ -281,3 +281,7 @@ A rider-view-specific, resource-efficient road-hazard perception and risk-warnin
 
 ### Safety and publication boundaries
 Use an approved, lawful and non-distracting recording protocol; riders must not interact with a screen while moving. Protect faces, plates and sensitive location data. Do not claim road-water depth or friction unless measured independently. Warning-only; no autonomous throttle, steering or braking. Q1 acceptance is not guaranteed.
+
+## 360° Intelligence
+
+The [360° Intelligence Profile v1.0](docs/PUI89_360_DEGREE_INTELLIGENCE_PROFILE_V1.0.md) defines rider-centred hazard awareness with lean, vibration, weather, rider-occlusion and distraction requirements. Rider control remains authoritative. **Status: Proposed**; no functioning scooter or validated 360° sensor suite is established.

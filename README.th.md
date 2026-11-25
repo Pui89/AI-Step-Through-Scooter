@@ -116,3 +116,36 @@ PUI89 AI Step-Through Scooter เป็นผลิตภัณฑ์ Mobility �
 | 2030+ | รองรับ Sensor, Model และ Edge Compute ที่เปลี่ยนได้ในแต่ละรุ่น พร้อมคำเตือน Offline และไม่มีการควบคุมคันเร่ง พวงมาลัย หรือเบรกโดยอัตโนมัติ |
 
 **กฎป้องกันความล้าสมัย:** ติดตามเทคโนโลยีทุกเดือน ทบทวนสถาปัตยกรรมทุกไตรมาส และทบทวน Roadmap ทุกปี พร้อมทบทวนนอกกำหนดเมื่อ Dependency สำคัญหยุดสนับสนุน พบปัญหาความปลอดภัย หรือเกินข้อจำกัดด้านประสิทธิภาพ/ทรัพยากร ทุกการอัปเกรดต้องมี Baseline ที่ตรวจสอบแล้ว แผน Migration/Rollback ชุดทดสอบ Compatibility/Regression และบันทึกการตัดสินใจ ห้ามเลือกเทคโนโลยีเพียงเพราะเป็นของใหม่ **สถานะ:** เป็นแผนเท่านั้น ไม่ได้กล่าวอ้างว่าความสามารถในอนาคตพัฒนา/Validate แล้ว
+
+
+---
+
+## ทิศทางการวิจัยทางวิชาการ — เป้าหมายวารสาร Q1 (ข้อเสนอ)
+
+**หัวข้อวิจัย:** Lightweight Edge AI สำหรับการทำนายความเสี่ยงบนถนนโดยคำนึงถึงมุมมองผู้ขับขี่  
+**ชื่อบทความเบื้องต้น:** *Rider-View Lightweight Edge Perception and Uncertainty-Aware Road-Hazard Prediction for Two-Wheeled Mobility*
+
+### ปัญหาและช่องว่าง
+ผู้ขับขี่สองล้อเผชิญหลุม ถนนชำรุด เศษวัสดุ น้ำขัง และการจราจรที่เปลี่ยนแปลง กล้องบน Scooter มีมุมมอง การสั่น การเอียง และ Motion Blur ต่างจากรถยนต์ จึงต้องตรวจสอบการถ่ายโอนโมเดลจาก Car-view อย่างเป็นระบบ ช่องว่างที่ต้องศึกษา ได้แก่ Rider-view Evaluation, การทำนายความเสี่ยงแทนการตรวจจับความเสียหายเพียงอย่างเดียว และการทำงานบน Edge ที่มีทรัพยากรจำกัด
+
+### คำถามและสมมติฐาน
+- RQ1 Rider-view Adaptation เพิ่มการตรวจจับอันตรายเมื่อเทียบกับ Generic/Car-view หรือไม่
+- RQ2 Temporal Context ช่วยทำนายความเสี่ยงได้ดีกว่าภาพเดี่ยวหรือไม่
+- RQ3 โมเดล Edge ขนาดเล็กยังทำงานได้เพียงใดภายใต้ข้อจำกัด Compute
+- H1 Rider-view Adaptation เพิ่ม Event-level Detection บนเส้นทางใหม่
+- H2 Temporal และ Uncertainty-aware Warning ช่วยสมดุลการพลาดอันตรายกับการเตือนผิด
+
+### วิธีการแบบ Hybrid AI
+ตรวจจับ/แบ่งส่วนหลุม รอยแตก เศษวัสดุ น้ำขัง ใช้ Tracking/Optical Flow ประเมินความต่อเนื่อง ใช้ Camera Pose/IMU เฉพาะเมื่อซิงโครไนซ์และสอบเทียบแล้ว ประเมินความเสี่ยงจากชนิดอันตราย ระยะโดยประมาณ การเคลื่อนที่ และบริบทถนน ห้ามอนุมานความลึกหรือแรงเสียดทานที่ไม่ได้วัด ใช้ Specialist Model ขนาดเล็กและ Semantic Model เพิ่มเมื่อทรัพยากรเอื้อ พร้อม Calibration และ Unknown/Abstain ผลลัพธ์เป็นคำเตือนเท่านั้น
+
+### ชุดข้อมูลที่เสนอ
+RDD2020/RDD2022 สำหรับ Road Damage, StreetSurfaceVis สำหรับ Road Surface และชุดข้อมูล Motorcycle/Rider Trajectory เมื่อยืนยันที่มา มุมมอง และใบอนุญาตแล้ว ต้องเก็บข้อมูล Scooter/Rider-view ที่ได้รับอนุญาตจากเส้นทางและตำแหน่งกล้องต่างกัน พร้อม IMU/Route/Weather/Hazard Label เท่าที่มีและชอบด้วยกฎหมาย ภาพรถยนต์ใช้ Pretraining ได้ แต่ห้ามรายงานเป็น Scooter-view Validation
+
+### การทดลองและตัวชี้วัด
+เปรียบเทียบ Generic Detector, Car-view Pretrained, Rider-view Fine-tuned, Temporal Tracking และ Lightweight Risk Model ทดสอบเส้นทางใหม่ ภาพเดี่ยว/Temporal หลุม รอยแตก เศษวัสดุ พื้นเปียก Vibration, Mounting Angle, Lean, Motion Blur, ฝน แสงสะท้อน แสงน้อย และ Quantization
+
+**ผลหลัก:** Event-level Hazard Recall ภายใต้ Nuisance-warning Rate หรือ Warning Lead Time ที่กำหนดล่วงหน้า  
+**ผลรอง:** Precision, F1/mAP, Hazard-distance Error เมื่อมี Ground Truth, False Warnings/Hour, Calibration, Latency, RAM, Model Size และ Energy
+
+### ผลงานที่คาดหวังและขอบเขตความปลอดภัย
+กรอบ Rider-view Road Hazard AI ที่มีประสิทธิภาพด้านทรัพยากร ใช้ Temporal Context และ Uncertainty Calibration พร้อม Protocol ที่ทำซ้ำได้ เก็บข้อมูลตามกฎหมายและไม่รบกวนผู้ขับขี่ ห้ามให้ผู้ขับดู/แตะหน้าจอขณะเคลื่อนที่ ปกป้องใบหน้า ป้ายทะเบียน และตำแหน่งอ่อนไหว ห้ามกล่าวอ้างความลึกน้ำหรือแรงเสียดทานหากไม่มีการวัด ระบบเป็นคำเตือนเท่านั้น ไม่มีการควบคุมคันเร่ง พวงมาลัย หรือเบรกอัตโนมัติ

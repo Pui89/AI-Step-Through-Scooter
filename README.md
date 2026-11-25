@@ -221,3 +221,63 @@ This roadmap extends the P1–P4 sequence beyond the 2026 trend baseline. Horizo
 | 2030+ | Support replaceable sensors, models and edge compute across scooter revisions while retaining offline warnings and no autonomous throttle/steering/braking. |
 
 **Continuous anti-obsolescence rule:** review technology signals monthly, architecture quarterly and the full roadmap annually; trigger an out-of-cycle review for unsupported critical dependencies, security issues or breached performance/resource limits. Every upgrade needs a verified baseline, migration/rollback path, compatibility/regression tests and a recorded decision. Do not adopt trends merely because they are new. **Status:** Planned only; future capabilities are not claimed as implemented or validated.
+
+
+---
+
+## Academic Research Direction — Q1-Targeted Study (Proposed)
+
+**Research topic:** Lightweight Edge AI for Rider-Centred Road Risk Prediction  
+**Working title:** *Rider-View Lightweight Edge Perception and Uncertainty-Aware Road-Hazard Prediction for Two-Wheeled Mobility*
+
+**Status:** Proposed for lecturer review. Novelty, dataset permissions, rider-view data access and trial safety require verification. No validated scooter-mounted system is claimed.
+
+### Problem and motivation
+Two-wheeled riders face road defects, debris, standing water and changing traffic. A scooter/rider-mounted camera differs from a car camera in viewpoint, vibration, lean angle and motion blur. A car-view detector cannot be assumed to transfer reliably to two-wheel mobility.
+
+### Candidate research gaps
+- Limited rider-view evaluation for road-hazard perception.
+- Difference between generic road-damage detection and rider-relevant risk prediction.
+- Effects of vibration, mounting, lean, rain, low light and motion blur.
+- Need for low-latency, low-memory inference with calibrated warnings and controlled false-alert rates.
+
+### Research questions and hypotheses
+- **RQ1:** How much does rider-view adaptation improve hazard detection over generic or car-view baselines?
+- **RQ2:** Does temporal context improve risk prediction compared with single-frame detection?
+- **RQ3:** Can lightweight edge models maintain useful performance under compute constraints and adverse conditions?
+- **H1:** Rider-view adaptation will improve event-level detection on held-out scooter routes.
+- **H2:** Temporal and uncertainty-aware warning logic will improve the missed-hazard/nuisance-warning trade-off over fixed thresholds.
+
+### Proposed hybrid-AI method
+1. Detect/segment potholes, cracks, debris, standing water and predefined road hazards.
+2. Use tracking/optical flow to estimate persistence and relative motion.
+3. Incorporate camera pose and IMU only when synchronised and calibrated data exist.
+4. Estimate rider-relevant risk from hazard type, apparent distance, motion and road context; do not infer unobserved depth or friction.
+5. Use a compact specialist model for continuous inference and optional higher-capacity semantic reasoning only within resource/latency budgets.
+6. Calibrate warning confidence and provide an unknown/abstain state.
+7. Keep outputs advisory only; no autonomous throttle, steering or braking.
+
+### Candidate datasets and data collection
+- **RDD2020/RDD2022** for initial road-damage baselines.
+- **StreetSurfaceVis** for road-surface classification, subject to licence and domain review.
+- Candidate motorcycle/rider trajectory or video datasets only after provenance, viewpoint and licence checks.
+- Essential original evidence: permissioned scooter/rider-view recordings across routes, camera positions, road conditions and lighting. Record mounting, speed where lawfully available, IMU, route/session, weather and hazard labels with privacy safeguards and a non-distracting recording protocol.
+- Car-view footage may support pretraining/transfer analysis but is not scooter-view validation.
+
+### Experiments and evaluation
+Baselines: generic road-damage detector; car-view pretrained detector; rider-view fine-tuned detector; temporal tracking; proposed lightweight risk model.
+- Generic versus rider-view adaptation on independent routes.
+- Single-frame versus temporal prediction.
+- Potholes, cracks, debris, wet surfaces and predefined hazard classes.
+- Vibration, mounting angle, lean, motion blur, rain, glare and low-light robustness.
+- Quantization/model-size trade-offs on declared edge hardware.
+- Warning lead time, false alerts and missed hazards.
+
+**Primary outcome:** pre-register event-level hazard recall at a fixed nuisance-warning rate, or warning lead time for a predefined hazard class.  
+**Secondary metrics:** precision, F1/mAP, hazard-distance error where ground truth exists, false warnings/riding hour, calibration, latency, RAM, model size and energy/inference.
+
+### Expected contribution
+A rider-view-specific, resource-efficient road-hazard perception and risk-warning framework with temporal context, uncertainty calibration and a reproducible evaluation protocol for two-wheeled mobility.
+
+### Safety and publication boundaries
+Use an approved, lawful and non-distracting recording protocol; riders must not interact with a screen while moving. Protect faces, plates and sensitive location data. Do not claim road-water depth or friction unless measured independently. Warning-only; no autonomous throttle, steering or braking. Q1 acceptance is not guaranteed.

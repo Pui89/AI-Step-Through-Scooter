@@ -189,3 +189,10 @@ Console สำหรับผู้ขี่ที่เสนอจะแสด
 ระบบอัจฉริยะภายใน Scooter ให้ข้อมูลและคำแนะนำตามอินเทอร์เฟซรถที่ตรวจสอบแล้วเท่านั้น การทำงาน Offline ไม่ได้ให้อำนาจขับขี่อัตโนมัติ ผู้ขี่ยังคงรับผิดชอบแฮนด์ คันเร่ง และเบรก AI ห้ามควบคุมอุปกรณ์เหล่านี้
 
 เมื่อข้อมูลขาดหาย เก่า ขัดแย้ง หรือไม่น่าเชื่อถือ ให้แสดงเหตุผลและงดการกระทำที่ได้รับผลกระทบ ใช้เฉพาะข้อมูลและความสามารถภายในเครื่องที่ตรวจสอบแล้ว หากความปลอดภัยหรือพลังงานสำรองไม่เพียงพอ ให้เข้าสู่ SAFE STOP / NEED HELP แทนการคาดเดา คำว่า “Offline capable” ไม่ได้รับประกันการทำงานในทุกพื้นที่ห่างไกล ป่า ใต้ดิน หรือพื้นที่ภาคสนามลึก
+
+
+## Self-Recovery and Camera-Assisted Awareness
+
+**Proposed requirements — not implemented, camera hardware not selected, not field-validated.** A restart returns to a safe software state and repeats self-checks; it never automatically resumes motion or erases fault history. Detect stalls, impact/fall, abnormal power, sensor faults or software failures; stop safely, log the event, run bounded diagnostics and resume only after the fault is cleared. Suspected electrical short, overheating or physical damage requires hardware isolation and human inspection; do not repeatedly power-cycle. Camera inputs are local-first and are not the sole safety sensor.
+
+กล้องเป็นอุปกรณ์เสริมและต้องไม่รบกวนสมาธิผู้ขี่ การบันทึกต้องพิจารณาความเป็นส่วนตัว ระยะเวลาเก็บข้อมูล และกฎหมาย เมื่อเกิด Fault หรือการชนให้แจ้งผู้ขี่และเก็บข้อมูลวินิจฉัย ห้ามเคลื่อนรถหรือเริ่มขับขี่ใหม่เอง ผู้ขี่เป็นผู้ควบคุมการหยุดอย่างปลอดภัย

@@ -312,3 +312,12 @@ The intended rider-facing console presents scooter operating state, battery/engi
 - Use the approved vehicle-specific startup/ready/operating/shutdown sequence, not a generic robot shutdown command.
 
 See the [PUI89 Universal Local Console Architecture v1.0 — Draft PR](https://github.com/Pui89/PUI89-Shared-AI-Core/pull/210). This is a proposed requirement, not evidence of a functioning scooter console or road validation.
+
+
+## Simple Local Intelligence for Offline and Uncertain Conditions
+
+**Design requirement — not implemented or field-validated.** Keep essential functions on-device; no mandatory cloud, internet, phone app or remote control. Use energy conservatively: warn at a validated low-power threshold, shed nonessential workloads first, and preserve energy for a safe stop. Do not assume self-charging or unlimited runtime.
+
+Scooter local intelligence is informational/advisory and depends on verified onboard vehicle interfaces. Offline status does not authorize autonomous riding. The rider remains responsible for steering, throttle and braking; AI must not control them.
+
+When inputs are missing, stale, conflicting or unreliable, show the reason and abstain from the affected action. Use only verified local data and capabilities. If safety or energy reserve is insufficient, enter SAFE STOP / NEED HELP rather than guessing. “Offline capable” does not mean guaranteed operation in every remote, wild, underground or deep-field environment.

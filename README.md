@@ -297,3 +297,18 @@ This product follows the [PUI89 Six-Product Environmental, Material & Safety Qua
 **Status: Proposed / Not implemented / Not tested.** Live vibration monitoring requires physical sensing hardware plus embedded acquisition and software/AI analysis; it is not AI-only. Candidate hardware: qualified vehicle IMU/accelerometer; optional motor/engine, wheel or frame sensors after design review. Candidate analysis: road/vehicle vibration context and drivetrain/wheel trends, distinguishing rough-road input from component faults. Vehicle integration and applicable automotive qualification must be reviewed before installation.
 
 The console must separate **Hardware** (sensor presence/type/location/connection/calibration), **Embedded & Signal Processing** (acquisition, RMS/peak/FFT and data quality), **AI/Analytics** (anomaly/trend model and confidence), **Integration** (vehicle/module mapping and maintenance workflow), and **Overall capability** (Hardware required / AI-Software only / Hardware + AI / Not available). Show Not installed, No live data, Not tested and TBD explicitly. Never invent live metrics or show healthy status without sensor data. Sensor selection, mounting, calibration, baselines, thresholds, false alarms and detection latency require evidence. AI is advisory and does not command steering, throttle or braking. See the [shared vibration and console framework](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/feature/vibration-detection-console-v1/docs/standards/PUI89_SIX_PRODUCT_ENVIRONMENTAL_MATERIAL_SAFETY_QUALIFICATION_V1.0.md).
+
+
+## Local Vehicle Console — Proposed
+
+**Status: Proposed / Not implemented / Not tested.** No production scooter display, selected vehicle hardware, vehicle-interface integration or validated local console is established.
+
+The intended rider-facing console presents scooter operating state, battery/engine and vehicle-health information where supported by verified interfaces, warnings, approved read-only diagnostics and maintenance status. The display and controls must suit a two-wheel step-through scooter and minimise rider distraction.
+
+- Essential local information and warnings must not require a phone app, remote service, cloud account or internet.
+- Rider retains full authority over steering, throttle and braking. AI and console are advisory only; they must not command these controls.
+- Vehicle data access requires qualified integration review. Do not expose write access to safety-critical vehicle networks through the console.
+- A screen shutdown is not an emergency stop or vehicle power isolation. Preserve qualified physical vehicle controls and define behavior for display, power, sensor and communication failures.
+- Use the approved vehicle-specific startup/ready/operating/shutdown sequence, not a generic robot shutdown command.
+
+See the [PUI89 Universal Local Console Architecture v1.0 — Draft PR](https://github.com/Pui89/PUI89-Shared-AI-Core/pull/210). This is a proposed requirement, not evidence of a functioning scooter console or road validation.

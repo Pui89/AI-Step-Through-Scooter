@@ -165,3 +165,34 @@ RDD2020/RDD2022 สำหรับ Road Damage, StreetSurfaceVis สำหรั
 **สถานะ: Proposed / Not implemented / Not tested.** การตรวจจับแบบสดต้องใช้เซนเซอร์จริงร่วมกับ Embedded Acquisition และ Software/AI ไม่ใช่ AI อย่างเดียว Hardware ที่ควรศึกษา: IMU/Accelerometer เกรดยานยนต์ และเซนเซอร์มอเตอร์/เครื่องยนต์ ล้อ หรือโครงเพิ่มเติมหลังทบทวนแบบ วิเคราะห์แรงสั่นถนน/ตัวรถและแนวโน้มระบบขับเคลื่อน/ล้อ โดยแยกแรงจากถนนขรุขระออกจากความผิดปกติของชิ้นส่วน ต้องทบทวนการติดตั้งรถและข้อกำหนดยานยนต์ที่เกี่ยวข้องก่อนติดตั้ง
 
 Console ต้องแยก **Hardware** (มีเซนเซอร์ ชนิด/ตำแหน่ง/การเชื่อมต่อ/Calibration), **Embedded & Signal Processing** (Acquisition, RMS/Peak/FFT และคุณภาพข้อมูล), **AI/Analytics** (โมเดลตรวจจับ/แนวโน้มและ Confidence), **Integration** (จับคู่รถ/โมดูลและ Workflow ซ่อม) และ **Overall capability** (Hardware required / AI-Software only / Hardware + AI / Not available) แสดง Not installed, No live data, Not tested และ TBD อย่างชัดเจน ห้ามสร้างค่าการสั่นสดหรือแสดง Healthy เมื่อไม่มีข้อมูล การเลือกเซนเซอร์ จุดยึด Calibration Baseline Threshold False Alarm และ Detection Latency ต้องมีหลักฐาน AI เป็นคำแนะนำและไม่สั่งพวงมาลัย คันเร่ง หรือเบรก ดู [กรอบ Vibration และ Console ทั้ง 6 ผลิตภัณฑ์](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/feature/vibration-detection-console-v1/docs/standards/PUI89_SIX_PRODUCT_ENVIRONMENTAL_MATERIAL_SAFETY_QUALIFICATION_V1.0.th.md)
+
+
+## Local Vehicle Console — แนวคิด Console ภายในสกู๊ตเตอร์ (ข้อเสนอ)
+
+**สถานะ: Proposed / Not implemented / Not tested** ยังไม่มีหลักฐานว่ามีหน้าจอสกู๊ตเตอร์จริง มีการเลือกฮาร์ดแวร์ยานยนต์ เชื่อมต่ออินเทอร์เฟซรถ หรือมี Local Console ที่ผ่านการตรวจสอบแล้ว
+
+Console สำหรับผู้ขี่ที่เสนอจะแสดงสถานะการทำงานของสกู๊ตเตอร์ ข้อมูลแบตเตอรี่/เครื่องยนต์และสุขภาพรถเมื่อมีอินเทอร์เฟซที่ตรวจสอบแล้ว คำเตือน การวินิจฉัยแบบ Read-only ที่ได้รับอนุมัติ และสถานะบำรุงรักษา หน้าจอและปุ่มต้องเหมาะกับสกู๊ตเตอร์สองล้อแบบ Step-Through และลดการเบี่ยงเบนสมาธิผู้ขี่
+
+- ข้อมูลและคำเตือนพื้นฐานภายในเครื่องต้องไม่บังคับใช้แอปโทรศัพท์ บริการรีโมต บัญชี Cloud หรืออินเทอร์เน็ต
+- ผู้ขี่ยังคงควบคุมแฮนด์ คันเร่ง และเบรกทั้งหมด AI และ Console ให้คำแนะนำเท่านั้น ห้ามสั่งควบคุมอุปกรณ์เหล่านี้
+- การเข้าถึงข้อมูลรถต้องผ่านการทบทวนการบูรณาการโดยผู้เชี่ยวชาญ ห้ามเปิดสิทธิ์เขียนข้อมูลไปยังเครือข่ายรถที่เกี่ยวข้องกับความปลอดภัยผ่าน Console
+- การปิดหน้าจอไม่ใช่ Emergency Stop หรือการแยกพลังงานรถ ต้องคงอุปกรณ์ควบคุมทางกายภาพที่ผ่านการรับรอง และกำหนดพฤติกรรมเมื่อจอ พลังงาน เซนเซอร์ หรือการสื่อสารขัดข้อง
+- ใช้ลำดับเปิด/พร้อม/ทำงาน/ปิดระบบเฉพาะรถที่ได้รับอนุมัติ ไม่ใช้คำสั่งปิดระบบของหุ่นยนต์ทั่วไปแทน
+
+ดู [PUI89 Universal Local Console Architecture v1.0 — Draft PR](https://github.com/Pui89/PUI89-Shared-AI-Core/pull/210) นี่เป็นข้อกำหนดที่เสนอ ไม่ใช่หลักฐานว่ามี Console สกู๊ตเตอร์ที่ทำงานได้จริงหรือผ่านการทดสอบบนถนน
+
+
+## Local Intelligence ที่เรียบง่ายสำหรับพื้นที่ Offline และไม่แน่นอน
+
+**ข้อกำหนดการออกแบบ — ยังไม่ได้พัฒนาและตรวจสอบภาคสนาม** ให้ฟังก์ชันที่จำเป็นทำงานภายในอุปกรณ์ ไม่บังคับ Cloud อินเทอร์เน็ต แอปโทรศัพท์ หรือรีโมต ใช้พลังงานอย่างประหยัด: เตือนเมื่อถึงระดับพลังงานต่ำที่ผ่านการกำหนดจากการทดสอบ ลดงานที่ไม่จำเป็นก่อน และสำรองพลังงานไว้สำหรับการหยุดอย่างปลอดภัย ห้ามสมมติว่าชาร์จไฟเองได้หรือทำงานได้ไม่จำกัดเวลา
+
+ระบบอัจฉริยะภายใน Scooter ให้ข้อมูลและคำแนะนำตามอินเทอร์เฟซรถที่ตรวจสอบแล้วเท่านั้น การทำงาน Offline ไม่ได้ให้อำนาจขับขี่อัตโนมัติ ผู้ขี่ยังคงรับผิดชอบแฮนด์ คันเร่ง และเบรก AI ห้ามควบคุมอุปกรณ์เหล่านี้
+
+เมื่อข้อมูลขาดหาย เก่า ขัดแย้ง หรือไม่น่าเชื่อถือ ให้แสดงเหตุผลและงดการกระทำที่ได้รับผลกระทบ ใช้เฉพาะข้อมูลและความสามารถภายในเครื่องที่ตรวจสอบแล้ว หากความปลอดภัยหรือพลังงานสำรองไม่เพียงพอ ให้เข้าสู่ SAFE STOP / NEED HELP แทนการคาดเดา คำว่า “Offline capable” ไม่ได้รับประกันการทำงานในทุกพื้นที่ห่างไกล ป่า ใต้ดิน หรือพื้นที่ภาคสนามลึก
+
+
+## Self-Recovery and Camera-Assisted Awareness
+
+**Proposed requirements — not implemented, camera hardware not selected, not field-validated.** A restart returns to a safe software state and repeats self-checks; it never automatically resumes motion or erases fault history. Detect stalls, impact/fall, abnormal power, sensor faults or software failures; stop safely, log the event, run bounded diagnostics and resume only after the fault is cleared. Suspected electrical short, overheating or physical damage requires hardware isolation and human inspection; do not repeatedly power-cycle. Camera inputs are local-first and are not the sole safety sensor.
+
+กล้องเป็นอุปกรณ์เสริมและต้องไม่รบกวนสมาธิผู้ขี่ การบันทึกต้องพิจารณาความเป็นส่วนตัว ระยะเวลาเก็บข้อมูล และกฎหมาย เมื่อเกิด Fault หรือการชนให้แจ้งผู้ขี่และเก็บข้อมูลวินิจฉัย ห้ามเคลื่อนรถหรือเริ่มขับขี่ใหม่เอง ผู้ขี่เป็นผู้ควบคุมการหยุดอย่างปลอดภัย

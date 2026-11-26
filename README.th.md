@@ -153,3 +153,8 @@ RDD2020/RDD2022 สำหรับ Road Damage, StreetSurfaceVis สำหรั
 ## 360° Intelligence
 
 กำหนดระบบรับรู้รอบตัวผู้ขับขี่เพื่อแจ้งเตือนการจราจรและอันตราย โดยคำนึงถึงท่านั่ง การเอียงรถ แรงสั่นสะเทือน สภาพอากาศ และการไม่รบกวนสมาธิ ผู้ขับขี่ยังคงควบคุมรถเองทั้งหมด ดู [360° Intelligence Profile v1.0](docs/PUI89_360_DEGREE_INTELLIGENCE_PROFILE_V1.0.md) และ [สถาปัตยกรรมกลาง](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/PUI89_360_DEGREE_INTELLIGENCE_V1.0.md) **สถานะ: Proposed** ยังไม่มีสกู๊ตเตอร์จริงหรือผลทดสอบระบบ 360°
+
+
+## การตรวจสอบคุณสมบัติด้านสภาพแวดล้อม วัสดุ และความปลอดภัย
+
+ผลิตภัณฑ์นี้ใช้ [กรอบ PUI89 Six-Product Environmental, Material & Safety Qualification](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/standards/PUI89_SIX_PRODUCT_ENVIRONMENTAL_MATERIAL_SAFETY_QUALIFICATION_V1.0.th.md) ข้อกำหนดเฉพาะ Scooter ครอบคลุมฝน/ละอองน้ำจากถนน ฝุ่น การสั่นสะเทือน วัฏจักรความร้อน การกัดกร่อน ขั้วต่อและสายไฟสำหรับยานยนต์สองล้อ การป้องกันแบตเตอรี่/BMS และการติดตั้งที่ปลอดภัยต่อผู้ขับขี่ AI ยังคงเป็นระบบให้คำแนะนำ ไม่ควบคุมพวงมาลัย คันเร่ง หรือเบรก ยังไม่มีการกล่าวอ้างว่ารถทั้งคันกันน้ำ ลุยน้ำได้ ผ่านการทดสอบถนน หรือได้รับการรับรอง

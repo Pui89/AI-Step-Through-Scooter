@@ -285,3 +285,8 @@ Use an approved, lawful and non-distracting recording protocol; riders must not 
 ## 360° Intelligence
 
 The [360° Intelligence Profile v1.0](docs/PUI89_360_DEGREE_INTELLIGENCE_PROFILE_V1.0.md) defines rider-centred hazard awareness with lean, vibration, weather, rider-occlusion and distraction requirements. Rider control remains authoritative. **Status: Proposed**; no functioning scooter or validated 360° sensor suite is established.
+
+
+## Environmental, Material & Safety Qualification
+
+This product follows the [PUI89 Six-Product Environmental, Material & Safety Qualification Framework](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/standards/PUI89_SIX_PRODUCT_ENVIRONMENTAL_MATERIAL_SAFETY_QUALIFICATION_V1.0.md). Scooter-specific candidate requirements cover road spray/rain, dust, vibration, thermal cycling, corrosion, automotive/two-wheel connectors and wiring, battery/BMS protection, and rider-safe installation. AI remains advisory and does not control steering, throttle or braking. No whole-vehicle waterproofing, wading capability, road validation or certification is claimed.

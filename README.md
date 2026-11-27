@@ -11,6 +11,24 @@
 
 *Concept artwork only. It is not a functioning scooter or evidence of road testing.*
 
+## PUI89 Design & Customer Promise
+
+> **Easy to Engineer. Easy to Use. Loved by Customers.**
+
+**Easy to ride. Smooth and comfortable. Luxurious to experience. Excellent performance.**
+
+The scooter must feel approachable and confidence-inspiring for everyday riders:
+- **Easy riding:** low-effort step-through access, natural upright ergonomics, intuitive controls, manageable balance and low-speed manoeuvrability, and clear rider information.
+- **Smooth comfort:** controlled vibration, progressive power delivery, comfortable suspension and seat, predictable braking, low operating noise and reduced fatigue on everyday journeys.
+- **Premium experience:** refined proportions, durable premium-feeling finishes, thoughtful storage, comfortable passenger accommodation where validated, weather protection and simple service access.
+- **Excellent performance:** measurable targets for acceleration, braking distance, handling, stability, range/energy use, thermal behaviour, durability and wet-weather operation—validated for the selected vehicle class and legal market.
+- **Engineer-friendly design:** clear architecture, standardised interfaces, documented wiring and connectors, complete BOM, diagnostics, modular service parts and understandable maintenance instructions.
+
+**Commercial objective:** deliver strong customer value, positive unit economics and a credible route to becoming a best-selling choice in its intended segment. Best-seller status and profitability are goals to validate—not guaranteed outcomes. Test usability with diverse riders and validate willingness to pay, reliability, service costs and repeat demand before production decisions.
+
+**Evidence boundary:** this is a product-design and business objective, not proof of a finished scooter, roadworthiness, comfort/performance validation, customer satisfaction, profitability, regulatory approval or mass-production readiness. AI remains advisory; the rider controls steering, throttle and braking.
+
+
 ## Image Evidence & Licensing Standard
 
 **Real-world reference:** cite existing step-through scooters, production motorcycle components, rider-assistance sensors, braking/lighting systems, tyres and road conditions. These references show existing designs and technologies, not a functioning PUI89 scooter.

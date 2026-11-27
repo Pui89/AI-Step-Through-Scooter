@@ -11,6 +11,16 @@
 
 *Concept artwork only. It is not a functioning scooter or evidence of road testing.*
 
+## Image Evidence & Licensing Standard
+
+**Real-world reference:** cite existing step-through scooters, production motorcycle components, rider-assistance sensors, braking/lighting systems, tyres and road conditions. These references show existing designs and technologies, not a functioning PUI89 scooter.
+
+**PUI89 concept image:** the PUI89 AI Step-Through Scooter artwork is a proposed two-wheel product design, not a manufactured vehicle or evidence of road testing.
+
+**Evidence caption:** distinguish real reference vehicles/components, PUI89 concept renders, simulations and verified physical test results. AI is advisory; do not imply autonomous throttle, steering or braking. Do not claim roadworthiness, flood-depth capability, payload or safety performance without validation.
+
+**Image source & licence:** prefer [Wikimedia Commons](https://commons.wikimedia.org/) and [Pexels](https://www.pexels.com/). Record source page, creator, asset URL, exact licence, attribution, access date and modifications. Verify commercial-use, derivative-work, trademark and identifiable-person restrictions for each asset.
+
 ## What this product is
 
 PUI89 AI Step-Through Scooter is a **practical two-wheel step-through mobility concept**. Easy mounting, a usable step-through floorboard and rider-first controls define the product direction. AI provides information and warnings; the rider remains responsible for riding.

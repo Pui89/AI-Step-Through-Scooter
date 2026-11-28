@@ -356,3 +356,10 @@ When inputs are missing, stale, conflicting or unreliable, show the reason and a
 **Proposed requirements — not implemented, camera hardware not selected, not field-validated.** A restart returns to a safe software state and repeats self-checks; it never automatically resumes motion or erases fault history. Detect stalls, impact/fall, abnormal power, sensor faults or software failures; stop safely, log the event, run bounded diagnostics and resume only after the fault is cleared. Suspected electrical short, overheating or physical damage requires hardware isolation and human inspection; do not repeatedly power-cycle. Camera inputs are local-first and are not the sole safety sensor.
 
 A camera is optional and must not distract the rider; recording requires privacy, retention and legal review. On a fault or impact, alert the rider and preserve diagnostic data. Never attempt autonomous vehicle movement or restart riding; the rider controls the safe stop.
+
+
+## Portfolio alignment update — 28 November 2026
+
+The canonical product is **PUI89 AI Step-Through Scooter**: a rider-first two-wheel step-through concept with flat-floor/easy-mounting design intent. AI features are advisory only; no autonomous steering, throttle or braking is claimed. Powertrain, energy architecture, sensor configuration and exact hardware remain open research decisions. Verified prototype cost is **TBD** until a defined removable research-kit configuration, exact parts, origin evidence and dated quotations are recorded.
+
+See the [six-product BOM and cost framework](https://github.com/Pui89/PUI89-Research/blob/main/docs/PROTOTYPE_BOM_AND_COST_FRAMEWORK.md).

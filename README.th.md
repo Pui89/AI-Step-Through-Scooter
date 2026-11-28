@@ -224,3 +224,10 @@ Console สำหรับผู้ขี่ที่เสนอจะแสด
 **Proposed requirements — not implemented, camera hardware not selected, not field-validated.** A restart returns to a safe software state and repeats self-checks; it never automatically resumes motion or erases fault history. Detect stalls, impact/fall, abnormal power, sensor faults or software failures; stop safely, log the event, run bounded diagnostics and resume only after the fault is cleared. Suspected electrical short, overheating or physical damage requires hardware isolation and human inspection; do not repeatedly power-cycle. Camera inputs are local-first and are not the sole safety sensor.
 
 กล้องเป็นอุปกรณ์เสริมและต้องไม่รบกวนสมาธิผู้ขี่ การบันทึกต้องพิจารณาความเป็นส่วนตัว ระยะเวลาเก็บข้อมูล และกฎหมาย เมื่อเกิด Fault หรือการชนให้แจ้งผู้ขี่และเก็บข้อมูลวินิจฉัย ห้ามเคลื่อนรถหรือเริ่มขับขี่ใหม่เอง ผู้ขี่เป็นผู้ควบคุมการหยุดอย่างปลอดภัย
+
+
+## อัปเดตความสอดคล้องของพอร์ต — 28 พฤศจิกายน 2026
+
+ชื่อมาตรฐานยังคงเป็น **PUI89 AI Step-Through Scooter** เป็นแนวคิดสกู๊ตเตอร์ 2 ล้อที่ให้ความสำคัญกับผู้ขับขี่ พร้อมพื้นวางเท้าเรียบและการขึ้นลงที่สะดวก ฟังก์ชัน AI เป็นเพียงการให้คำแนะนำ ไม่ได้กล่าวอ้างว่าควบคุมพวงมาลัย คันเร่ง หรือเบรกอัตโนมัติ ระบบขับเคลื่อน สถาปัตยกรรมพลังงาน configuration เซนเซอร์ และฮาร์ดแวร์ที่แน่นอนยังเป็นประเด็นวิจัยที่ต้องกำหนด ต้นทุนต้นแบบที่ตรวจสอบได้ยังเป็น **TBD** จนกว่าจะกำหนด configuration ชุดวิจัยแบบถอดได้ หมายเลขชิ้นส่วน หลักฐานแหล่งกำเนิด และใบเสนอราคาที่มีวันที่
+
+ดู [กรอบ BOM และต้นทุน 6 ผลิตภัณฑ์](https://github.com/Pui89/PUI89-Research/blob/main/docs/PROTOTYPE_BOM_AND_COST_FRAMEWORK.th.md)
